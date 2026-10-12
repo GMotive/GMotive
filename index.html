@@ -1,0 +1,224 @@
+<title>Motive Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout concept: Netflix-style hero. A tilted wall of Motive app screens sits dimmed behind a centered
+   headline and one big Get Motive button. Below: a picture slot (teammate's photo), one How it works box, tiny footer. */
+:root {
+  --bg: #000000;
+  --surface: #0D0912;
+  --surface-2: #17101F;
+  --line: #2B2038;
+  --fg: #F6F2FB;
+  --muted: #B3A7C2;
+  --purple: #9B30FF;
+  --purple-soft: #C48BFF;
+  --lime: #71E651;
+  --font-display: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 17px; line-height: 1.6; padding-inline: 20px; overflow-x: hidden; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.05; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; border-radius: 12px; }
+.wrap { max-width: 1120px; margin-inline: auto; }
+
+/* NAV */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(0,0,0,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); margin-inline: -20px; padding-inline: 20px; }
+.nav-inner { max-width: 1120px; margin-inline: auto; display: flex; align-items: center; gap: 28px; padding-block: 12px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; letter-spacing: -0.01em; }
+.brand img { height: 38px; width: auto; display: block; }
+.nav-links { display: flex; gap: 6px; margin-left: auto; list-style: none; padding: 0; margin-block: 0; }
+.nav-links a { display: block; padding: 8px 14px; border-radius: 999px; color: var(--muted); font-weight: 500; font-size: 0.98rem; transition: color .15s, background .15s; white-space: nowrap; }
+.nav-links a:hover { color: var(--fg); background: var(--surface-2); }
+.nav-links a[aria-current="page"] { color: var(--fg); background: var(--surface-2); }
+
+/* BUTTON */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: var(--font-display); font-weight: 600; border: 0; border-radius: 999px; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+.btn-lime { background: var(--lime); color: #06240A; font-size: 1.75rem; padding: 22px 60px; box-shadow: 0 10px 40px rgba(113,230,81,0.3); }
+.btn-lime:hover { transform: translateY(-2px); box-shadow: 0 14px 50px rgba(113,230,81,0.5); }
+.btn svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* HERO */
+.hero { position: relative; isolation: isolate; overflow: hidden; margin-inline: -20px; padding: 148px 20px 176px; text-align: center; background: #000; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background:
+  radial-gradient(ellipse 60% 55% at 50% 48%, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.35) 100%),
+  linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.85) 100%); }
+.hero::after { content: ""; position: absolute; z-index: 2; left: -12%; right: -12%; bottom: -135px; height: 215px; background: #000; border-radius: 50% 50% 0 0 / 100% 100% 0 0; border-top: 3px solid var(--purple-soft); box-shadow: 0 -10px 60px rgba(155,48,255,0.6); }
+.hero-content { position: relative; z-index: 3; max-width: 860px; margin-inline: auto; }
+.hero h1 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 600; letter-spacing: -0.01em; text-shadow: 0 2px 30px rgba(0,0,0,0.7); }
+.hero .btn { margin-top: 32px; }
+
+/* APP-SCREEN WALL (decorative) */
+.wall { position: absolute; z-index: 0; left: 50%; top: 50%; width: 1700px; display: flex; gap: 20px; transform: translate(-50%, -50%) rotate(-12deg); opacity: 0.62; pointer-events: none; }
+.wall-col { flex: 1; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.wall-col:nth-child(odd) { margin-top: -70px; }
+.wall-col:nth-child(3n) { margin-top: 40px; }
+.tile { background: #0F0A15; border: 1px solid #33243F; border-radius: 22px; padding: 14px; }
+.t-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.72rem; color: var(--muted); }
+.t-top b { font-family: var(--font-display); font-size: 1rem; color: var(--fg); font-weight: 600; }
+.t-label { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 10px 0 6px; }
+.avatars { display: flex; justify-content: center; margin-top: 14px; }
+.av { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; border: 3px solid #0F0A15; margin-left: -9px; }
+.av:first-child { margin-left: 0; }
+.av.a { background: var(--purple); color: #fff; }
+.av.b { background: var(--lime); color: #06240A; }
+.av.c { background: #D9B8FF; color: #2A0A52; }
+.av.d { background: #3A2C4C; color: #fff; }
+.ring { width: 96px; height: 96px; border-radius: 50%; margin: 14px auto 4px; display: grid; place-items: center; background: conic-gradient(var(--lime) 0 var(--p, 92%), #2B2038 0); }
+.ring-in { width: 78px; height: 78px; border-radius: 50%; background: #0F0A15; display: grid; place-items: center; }
+.ring-in b { font-family: var(--font-display); font-size: 1.5rem; }
+.picks { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.pick { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; background: var(--surface-2); border-radius: 14px; padding: 9px 12px; }
+.pick b { font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; }
+.pick em { font-style: normal; color: var(--lime); font-weight: 700; font-size: 0.82rem; align-self: center; grid-row: span 2; grid-column: 2; }
+.pick span { font-size: 0.7rem; color: var(--muted); }
+.chips-s { display: flex; flex-wrap: wrap; gap: 6px; }
+.cs { border: 1px solid #3A2C4C; border-radius: 999px; padding: 5px 12px; font-size: 0.78rem; font-weight: 500; color: var(--fg); }
+.cs.on { background: var(--purple); border-color: var(--purple); color: #fff; font-weight: 700; }
+.bub { background: var(--surface-2); border-radius: 16px 16px 16px 5px; padding: 8px 13px; font-size: 0.8rem; margin-top: 8px; max-width: 85%; }
+.bub.me { margin-left: auto; background: #2A1B3D; border-radius: 16px 16px 5px 16px; }
+.bub.mo { max-width: none; background: var(--purple); color: #fff; border-radius: 16px; font-weight: 500; }
+.t-img { height: 110px; border-radius: 14px; background: linear-gradient(135deg, var(--purple), #3B0E73 55%, #0F0A15); position: relative; overflow: hidden; }
+.t-img.alt { background: linear-gradient(135deg, #2F6B22, var(--lime) 120%); }
+.t-img::after { content: ""; position: absolute; width: 90px; height: 90px; border-radius: 50%; right: -20px; bottom: -30px; background: rgba(255,255,255,0.14); }
+.t-name { font-family: var(--font-display); font-weight: 600; font-size: 1rem; margin-top: 10px; }
+.t-meta { font-size: 0.74rem; color: var(--muted); }
+.frow { display: flex; align-items: center; gap: 10px; margin-top: 9px; font-size: 0.82rem; }
+.frow .av { width: 30px; height: 30px; font-size: 0.78rem; margin: 0; border: 0; }
+.frow .st { margin-left: auto; font-size: 0.68rem; font-weight: 700; color: var(--lime); }
+.frow .st.wait { color: var(--muted); }
+
+/* SECTIONS */
+.section { padding-block: 24px 80px; }
+.picture { width: 100%; aspect-ratio: 16 / 9; max-width: 100%; border: 2px dashed #4B3566; border-radius: 32px; background: radial-gradient(circle at 22% 72%, rgba(155,48,255,0.5), transparent 42%), radial-gradient(circle at 82% 58%, rgba(113,230,81,0.28), transparent 38%), linear-gradient(135deg, #130C1B, #0A0710); display: grid; justify-items: center; align-content: start; text-align: center; padding: 7% 20px 20px; }
+.picture b { font-family: var(--font-display); font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 600; display: block; line-height: 1; }
+.picture span { display: block; color: var(--muted); font-size: 0.9rem; margin-top: 10px; }
+
+.stage { position: relative; margin-block: 24px 80px; }
+.how { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); width: min(94%, 1000px); background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04)), rgba(16,10,24,0.34); -webkit-backdrop-filter: blur(22px) saturate(150%); backdrop-filter: blur(22px) saturate(150%); border: 1px solid rgba(255,255,255,0.24); box-shadow: 0 24px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.28); border-radius: 32px; padding: 32px 40px 36px; }
+.how h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); letter-spacing: -0.01em; }
+.how-steps { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+.how-step { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; align-content: start; padding-right: 28px; min-width: 0; }
+.how-step + .how-step { border-left: 1px solid var(--line); padding-left: 32px; }
+.how-step .n { grid-row: span 2; width: 44px; height: 44px; border-radius: 50%; background: var(--lime); color: #06240A; font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; display: grid; place-items: center; }
+.how-step h3 { font-size: 1.25rem; align-self: end; }
+.how-step p { color: #E2D8EE; font-size: 0.98rem; line-height: 1.45; }
+
+/* FOOTER */
+.footer { border-top: 1px solid var(--line); padding-block: 32px 40px; text-align: center; color: var(--muted); font-size: 0.95rem; }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .how { position: static; transform: none; width: 92%; margin: -36px auto 0; padding: 28px 24px 32px; }
+  .how-steps { grid-template-columns: 1fr; gap: 24px; }
+  .how-step, .how-step + .how-step { border-left: 0; padding-left: 0; padding-right: 0; }
+  .how-step + .how-step { border-top: 1px solid var(--line); padding-top: 24px; }
+}
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .nav-inner { gap: 6px 12px; }
+  .nav-links { order: 3; width: 100%; margin-left: 0; overflow-x: auto; }
+  .hero { padding: 100px 20px 140px; }
+  .wall { width: 1250px; }
+  .btn-lime { font-size: 1.4rem; padding: 18px 44px; }
+  .section { padding-block: 8px 56px; }
+  .picture { border-radius: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+
+<!-- NAV: links are placeholders (href="#") until the other pages exist -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#" aria-label="Motive home">
+      <img src="data:image/webp;base64,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" alt="">
+      <span>motive</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" aria-current="page">Home</a></li>
+      <li><a href="#">Product Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Team</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO: app-screen wall behind centered headline + button -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wall" aria-hidden="true">
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Friday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring" style="--p:92%"><div class="ring-in"><b>92%</b></div></div></div>
+      <div class="tile"><div class="t-top"><b>Group chat</b><span>4 friends</span></div><div class="bub">where should we go?</div><div class="bub me">idk, you pick</div><div class="bub">im fine with anything</div><div class="bub mo">Found 6 places for all of you</div></div>
+      <div class="tile"><div class="t-top"><b>Saturday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring" style="--p:87%"><div class="ring-in"><b>87%</b></div></div></div>
+      <div class="tile"><div class="t-top"><b>Filters</b><span>Your answers</span></div><div class="t-label">Area</div><div class="chips-s"><span class="cs">Walking distance</span><span class="cs on">Under 15 min</span></div><div class="t-label">Extras</div><div class="chips-s"><span class="cs on">Vegetarian friendly</span><span class="cs">Dog friendly</span></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st">Ready</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av c">M</span><span>Maya</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st wait">Picking…</span></div></div>
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>Flying Squirrel</b><em>93%</em><span>Trampoline park · $$ · 15 min</span></div><div class="pick"><b>Cineplex</b><em>89%</em><span>Movies · $$ · 12 min</span></div><div class="pick"><b>Mandarin</b><em>86%</em><span>Buffet · $$ · 11 min</span></div></div></div>
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st">Ready</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st wait">Picking…</span></div></div>
+      <div class="tile"><div class="t-top"><b>Friday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring" style="--p:92%"><div class="ring-in"><b>92%</b></div></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Group chat</b><span>4 friends</span></div><div class="bub">somewhere cheap?</div><div class="bub me">and not loud</div><div class="bub">ok found a few</div><div class="bub mo">Found 6 places for all of you</div></div>
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>Starbucks</b><em>92%</em><span>Coffee · $ · 6 min</span></div><div class="pick"><b>Dairy Queen</b><em>90%</em><span>Dessert · $ · 9 min</span></div><div class="pick"><b>Boston Pizza</b><em>85%</em><span>Casual dining · $$ · 14 min</span></div></div></div>
+      <div class="tile"><div class="t-top"><b>Filters</b><span>Your answers</span></div><div class="t-label">Budget</div><div class="chips-s"><span class="cs">$</span><span class="cs on">$$</span><span class="cs">$$$</span></div><div class="t-label">Mood</div><div class="chips-s"><span class="cs on">Chill</span><span class="cs">Lively</span><span class="cs">Foodie</span></div></div>
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st">Ready</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av c">M</span><span>Maya</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st wait">Picking…</span></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>McDonald's</b><em>96%</em><span>Fast food · $ · 8 min</span></div><div class="pick"><b>Burger King</b><em>91%</em><span>Fast food · $ · 10 min</span></div><div class="pick"><b>Tim Hortons</b><em>88%</em><span>Coffee · $ · 5 min</span></div></div></div>
+      <div class="tile"><div class="t-img"></div><div class="t-name">Flying Squirrel</div><div class="t-meta">Trampoline park · $$ · 94% match</div></div>
+      <div class="tile"><div class="t-img alt"></div><div class="t-name">Mandarin</div><div class="t-meta">Buffet · $$ · 90% match</div></div>
+      <div class="tile"><div class="t-top"><b>Group chat</b><span>4 friends</span></div><div class="bub">somewhere cheap?</div><div class="bub me">and not loud</div><div class="bub">ok found a few</div><div class="bub mo">Found 6 places for all of you</div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Saturday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring" style="--p:87%"><div class="ring-in"><b>87%</b></div></div></div>
+      <div class="tile"><div class="t-top"><b>Filters</b><span>Your answers</span></div><div class="t-label">Area</div><div class="chips-s"><span class="cs">Walking distance</span><span class="cs on">Under 15 min</span></div><div class="t-label">Extras</div><div class="chips-s"><span class="cs on">Vegetarian friendly</span><span class="cs">Dog friendly</span></div></div>
+      <div class="tile"><div class="t-img"></div><div class="t-name">Boston Pizza</div><div class="t-meta">Casual dining · $$ · 88% match</div></div>
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>McDonald's</b><em>96%</em><span>Fast food · $ · 8 min</span></div><div class="pick"><b>Burger King</b><em>91%</em><span>Fast food · $ · 10 min</span></div><div class="pick"><b>Tim Hortons</b><em>88%</em><span>Coffee · $ · 5 min</span></div></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st">Ready</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st wait">Picking…</span></div></div>
+      <div class="tile"><div class="t-top"><b>Friday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring" style="--p:92%"><div class="ring-in"><b>92%</b></div></div></div>
+      <div class="tile"><div class="t-top"><b>Group chat</b><span>4 friends</span></div><div class="bub">where should we go?</div><div class="bub me">idk, you pick</div><div class="bub">im fine with anything</div><div class="bub mo">Found 6 places for all of you</div></div>
+      <div class="tile"><div class="t-top"><b>Saturday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring" style="--p:87%"><div class="ring-in"><b>87%</b></div></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Filters</b><span>Your answers</span></div><div class="t-label">Budget</div><div class="chips-s"><span class="cs">$</span><span class="cs on">$$</span><span class="cs">$$$</span></div><div class="t-label">Mood</div><div class="chips-s"><span class="cs on">Chill</span><span class="cs">Lively</span><span class="cs">Foodie</span></div></div>
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st">Ready</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av c">M</span><span>Maya</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st wait">Picking…</span></div></div>
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>Flying Squirrel</b><em>93%</em><span>Trampoline park · $$ · 15 min</span></div><div class="pick"><b>Cineplex</b><em>89%</em><span>Movies · $$ · 12 min</span></div><div class="pick"><b>Mandarin</b><em>86%</em><span>Buffet · $$ · 11 min</span></div></div></div>
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st">Ready</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st wait">Picking…</span></div></div>
+    </div>
+
+  </div>
+  <div class="hero-content">
+    <h1 id="hero-title">One ranked list from everyone’s picks.</h1>
+    <a class="btn btn-lime" href="#">Get Motive
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<main class="wrap">
+  <!-- PICTURE SLOT: teammate's photo goes here (16:9) -->
+  <section class="stage" aria-label="Picture and how it works">
+    <div class="picture"><div><b>Picture</b><span>16:9 · 1920 × 1080</span></div></div>
+
+    <!-- HOW IT WORKS: single box, sits over the picture -->
+    <div class="how" role="group" aria-labelledby="how-title">
+    <h2 id="how-title">How it works</h2>
+    <ol class="how-steps">
+      <li class="how-step"><div class="n">1</div><h3>Start a blend</h3><p>Invite your friends with one link.</p></li>
+      <li class="how-step"><div class="n">2</div><h3>Set your filters</h3><p>Everyone picks a budget, area and mood.</p></li>
+      <li class="how-step"><div class="n">3</div><h3>Pick from one list</h3><p>Motive ranks the places that fit the whole group.</p></li>
+    </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">Group 16 · SEG2900</footer>
