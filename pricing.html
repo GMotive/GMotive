@@ -1,507 +1,163 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GMotive- Pricing</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #000000;
-      color: #FFFFFF;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1100px, 92%);
-      margin: auto;
-    }
-
-    header {
-      background: #000000;
-      border-bottom: 1px solid #222222;
-    }
-
-    nav {
-      min-height: 75px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 26px;
-      font-weight: 800;
-      color: #1DB954;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .nav-links a:hover {
-      color: #1DB954;
-    }
-
-    .nav-button,
-    .plan-button {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 30px;
-      background: #1DB954;
-      color: #000000;
-      font-weight: bold;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .nav-button:hover,
-    .plan-button:hover {
-      background: #1ED760;
-      transform: scale(1.03);
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 0 45px;
-    }
-
-    .eyebrow {
-      color: #1DB954;
-      font-weight: bold;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    h1 {
-      font-size: clamp(36px, 5vw, 58px);
-      line-height: 1.15;
-      margin: 20px 0;
-      letter-spacing: -1.5px;
-    }
-
-    .hero p {
-      color: #B3B3B3;
-      max-width: 620px;
-      margin: auto;
-      font-size: 18px;
-    }
-
-    .billing {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      margin: 30px 0 10px;
-      flex-wrap: wrap;
-    }
-
-    .billing button {
-      border: 1px solid #333333;
-      padding: 10px 18px;
-      border-radius: 25px;
-      cursor: pointer;
-      background: #222222;
-      color: #FFFFFF;
-      font-weight: bold;
-    }
-
-    .billing button.active {
-      background: #1DB954;
-      color: #000000;
-      border-color: #1DB954;
-    }
-
-    .saving {
-      color: #1DB954;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      padding: 30px 0 80px;
-      align-items: stretch;
-    }
-
-    .plan {
-      background: #121212;
-      border: 1px solid #333333;
-      border-radius: 16px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      transition: border-color 0.2s;
-    }
-
-    .plan:hover {
-      border-color: #1DB954;
-    }
-
-    .plan.popular {
-      border: 2px solid #1DB954;
-      box-shadow: 0 0 25px rgba(29, 185, 84, 0.12);
-    }
-
-    .popular-label {
-      background: #1DB954;
-      color: #000000;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 5px 12px;
-      border-radius: 20px;
-      align-self: flex-start;
-      margin-bottom: 15px;
-    }
-
-    .plan h2 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .plan-description {
-      color: #B3B3B3;
-      min-height: 50px;
-      font-size: 14px;
-    }
-
-    .price {
-      margin: 22px 0;
-      font-size: 44px;
-      font-weight: 800;
-    }
-
-    .price span {
-      font-size: 15px;
-      font-weight: normal;
-      color: #B3B3B3;
-    }
-
-    .plan-button {
-      margin-bottom: 25px;
-    }
-
-    .features-title {
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .features {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      font-size: 14px;
-      color: #D0D0D0;
-    }
-
-    .features li::before {
-      content: "✓";
-      color: #1DB954;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    .faq {
-      padding: 65px 0 85px;
-      background: #080808;
-    }
-
-    .section-heading {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 35px;
-    }
-
-    .faq-list {
-      max-width: 760px;
-      margin: auto;
-    }
-
-    details {
-      border-bottom: 1px solid #333333;
-      padding: 20px 0;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    summary:hover {
-      color: #1DB954;
-    }
-
-    details p {
-      margin-top: 12px;
-      color: #B3B3B3;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      color: #B3B3B3;
-      font-size: 14px;
-      background: #000000;
-    }
-
-    @media (max-width: 800px) {
-      .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 480px;
-        margin: auto;
-      }
-
-      .plan-description {
-        min-height: auto;
-      }
-
-      .hero {
-        padding-top: 50px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      nav {
-        flex-wrap: wrap;
-        padding: 15px 0;
-      }
-
-      .nav-links {
-        gap: 12px;
-        font-size: 13px;
-      }
-
-      .nav-button {
-        padding: 9px 12px;
-      }
-
-      .logo {
-        font-size: 22px;
-      }
-
-      .plan {
-        padding: 24px;
-      }
-    }
-  </style>
+  <title>Motive | Pricing</title>
 </head>
-
 <body>
 
+  <!-- Header: company name and navigation links -->
   <header>
-    <nav class="container">
-      <a class="logo" href="index.html">GMotive</a>
+    <p><a href="home.html"><strong>Motive</strong></a></p>
 
-      <div class="nav-links">
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a class="nav-button" href="GMotiveprice@gmail.com">Contact</a>
-      </div>
+    <!-- Navigation menu linking to the website pages -->
+    <nav aria-label="Main">
+      <a href="home.html">Home</a> |
+      <a href="features.html">Product Features</a> |
+      <a href="pricing.html">Pricing</a> |
+      <a href="team.html">Team</a>
     </nav>
   </header>
 
+  <hr>
+
   <main>
 
-    <section class="hero container">
-      <span class="eyebrow">Simple, transparent pricing</span>
-
-      <h1>The right plan for you </h1>
-
-      <div class="billing">
-        <button id="monthlyBtn" class="active" type="button">
-          Monthly
-        </button>
-
-        <button id="yearlyBtn" type="button">
-          Yearly
-        </button>
-
-        <span class="saving">Save 20%</span>
-      </div>
+    <!-- Introduction to the pricing page -->
+    <section>
+      <h1>The right plan for you</h1>
+      <p>Choose the plan that works best for your group.</p>
     </section>
 
-    <section id="pricing" class="container">
-      <div class="pricing-grid">
+    <hr>
 
-        <article class="plan">
-          <h2>Starter</h2>
+    <!-- Starter plan: basic features -->
+    <section>
+      <h2>Starter</h2>
+      <p><strong>$19</strong> / month</p>
+      <p>Everything you need to get started.</p>
 
-          <p class="plan-description">
-            Everything you need to get started.
-          </p>
+      <p><strong>What's included:</strong></p>
+      <ul>
+        <li>Basic analytics</li>
+        <li>Email support</li>
+        <li>Discover popular places</li>
+        <li>Essential integrations</li>
+      </ul>
 
-          <div class="price" data-monthly="19" data-yearly="15">
-            $19<span>/month</span>
-          </div>
-
-          <a class="plan-button" href="GMotiveprice@gmail.com?subject=Starter%20Plan">
-            Get started
-          </a>
-
-          <p class="features-title">What's included:</p>
-
-          <ul class="features">
-            <li></li>
-            <li>Basic analytics</li>
-            <li>Email support</li>
-            <li> the busiest places </li>
-            <li>Essential integrations</li>
-          </ul>
-        </article>
-
-        <article class="plan popular">
-          <span class="popular-label">Most popular</span>
-
-          <h2>Pro</h2>
-
-          <p class="plan-description">
-            More power for growing teams.
-          </p>
-
-          <div class="price" data-monthly="49" data-yearly="39">
-            $49<span>/month</span>
-          </div>
-
-          <a class="plan-button" href="GMotiveprice@gmail.com?subject=Pro%20Plan">
-            Choose Pro
-          </a>
-
-          <ul class="features">
-            <li>Advanced analytics</li>
-            <li>Priority support</li>
-            <li>Connect and chat with your friends</li>
-            <li>Advanced integrations</li>
-            <li>The most visited places</li>
-          </ul>
-        </article>
-
-        <article class="plan">
-          <h2>Business</h2>
-
-
-          <div class="price" data-monthly="99" data-yearly="79">
-            $99<span>/month</span>
-          </div>
-
-          <a class="plan-button" href="GMotiveprice@gmail.com?subject=Business%20Plan">
-            Contact sales
-          </a>
-
-         
-
-          <ul class="features">
-            <li>Unlimited calls with us </li>
-            <li>Custom reports</li>
-            <li>Dedicated support</li>
-            <li>AI helper</li>
-            <li>Advanced security</li>
-            <li>reservation in any places</li>
-          </ul>
-        </article>
-
-      </div>
+      <!-- Email link for customers interested in the Starter plan -->
+      <p>
+        <a href="mailto:GMotiveprice@gmail.com?subject=Starter%20Plan">
+          Get started
+        </a>
+      </p>
     </section>
 
-    <section id="faq" class="faq">
-      <div class="container">
+    <hr>
 
-        <h2 class="section-heading">
-          Frequently asked questions
-        </h2>
+    <!-- Pro plan: additional features -->
+    <section>
+      <h2>Pro</h2>
+      <p><strong>Most popular</strong></p>
+      <p><strong>$49</strong> / month</p>
+      <p>More power for growing teams.</p>
 
-        <div class="faq-list">
+      <p><strong>What's included:</strong></p>
+      <ul>
+        <li>Advanced analytics</li>
+        <li>Priority support</li>
+        <li>Connect and chat with your friends</li>
+        <li>Advanced integrations</li>
+        <li>Discover the most visited places</li>
+      </ul>
 
-          <details>
-            <summary>Can I change my plan later?</summary>
-            <p>
-              Yes. Contact our team to upgrade or change your plan
-              as your needs grow.
-            </p>
-          </details>
+      <!-- Email link for customers interested in the Pro plan -->
+      <p>
+        <a href="mailto:GMotiveprice@gmail.com?subject=Pro%20Plan">
+          Choose Pro
+        </a>
+      </p>
+    </section>
 
-          <details>
-            <summary>Can I cancel my subscription?</summary>
-            <p>
-              You can request cancellation at any time.
-              The applicable terms depend on your subscription agreement.
-            </p>
-          </details>
+    <hr>
 
-          <details>
-            <summary>Is there a free trial?</summary>
-            <p>
-              Contact our team to learn about trial availability
-              for your selected plan.
-            </p>
-          </details>
+    <!-- Business plan: features for groups and organizations -->
+    <section>
+      <h2>Business</h2>
+      <p><strong>$99</strong> / month</p>
+      <p>More options for groups that want to plan together.</p>
 
-          <details>
-            <summary>How can I contact support?</summary>
-            <p>
-              Email us at hello@example.com and our team will help you.
-            </p>
-          </details>
+      <p><strong>What's included:</strong></p>
+      <ul>
+        <li>Unlimited calls with our team</li>
+        <li>Custom reports</li>
+        <li>Dedicated support</li>
+        <li>AI helper</li>
+        <li>Advanced security</li>
+        <li>Reservations at different places</li>
+      </ul>
 
-        </div>
-      </div>
+      <!-- Email link for customers interested in the Business plan -->
+      <p>
+        <a href="mailto:GMotiveprice@gmail.com?subject=Business%20Plan">
+          Contact sales
+        </a>
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- FAQ: answers to common questions about Motive -->
+    <section>
+      <h2>Frequently asked questions</h2>
+
+      <!-- Question 1: product explanation -->
+      <h3>What is Motive?</h3>
+      <p>
+        Motive helps friends find and rank places based on everyone's
+        preferences.
+      </p>
+
+      <!-- Question 2: how the product works -->
+      <h3>How does Motive work?</h3>
+      <p>
+        Create a blend, invite your friends, set your preferences,
+        and discover a ranked list of places that suit your group.
+      </p>
+
+      <!-- Question 3: budget preferences -->
+      <h3>Can I choose my budget?</h3>
+      <p>
+        Yes. You can set your budget and other preferences to help
+        find places that work for your group.
+      </p>
+
+      <!-- Question 4: using Motive with friends -->
+      <h3>Can I use Motive with my friends?</h3>
+      <p>
+        Yes. Invite your friends using a link and combine everyone's
+        preferences to find places together.
+      </p>
+
+      <!-- Question 5: contacting the team -->
+      <h3>How can I get help?</h3>
+      <p>
+        Contact our team at
+        <a href="mailto:GMotiveprice@gmail.com">GMotiveprice@gmail.com</a>.
+      </p>
     </section>
 
   </main>
 
+  <hr>
+
+  <!--team and course information -->
   <footer>
-    <div class="container">
-      © <span id="year"></span> MyCompany. All rights reserved.
-    </div>
+    <p>Group 16 &middot; SEG2900</p>
   </footer>
-
-  <script>
-    const monthlyBtn = document.getElementById("monthlyBtn");
-    const yearlyBtn = document.getElementById("yearlyBtn");
-    const prices = document.querySelectorAll(".price");
-
-    function setBilling(period) {
-      prices.forEach((price) => {
-        const amount = price.dataset[period];
-        price.innerHTML = `$${amount}<span>/month</span>`;
-      });
-
-      monthlyBtn.classList.toggle("active", period === "monthly");
-      yearlyBtn.classList.toggle("active", period === "yearly");
-    }
-
-    monthlyBtn.addEventListener("click", () => {
-      setBilling("monthly");
-    });
-
-    yearlyBtn.addEventListener("click", () => {
-      setBilling("yearly");
-    });
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
 
 </body>
 </html>
+```
