@@ -1,420 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meet the Team | Motive</title>
+</head>
+<body>
+    <header id="top">
+        <h3><a href="#top">Motive</a></h3>
+        <nav aria-label="Main navigation">
+            <a href="#top">Home</a> |
+            <a href="#team" aria-current="page">Team</a>
+        </nav>
+    </header>
 
- 
-  
-  <!doctype html>
-  <html lang="en">
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="theme-color" content="#000000">
-      <title>Meet the Team | Motive</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-      <style>
-          :root {
-              color-scheme: dark;
-              --ink: #000;
-              --paper: #f5f3f7;
-              --muted: #aaa5b0;
-              --violet: #9b30ff;
-              --lime: #71e651;
-              --line: #343039;
-              font-family: "DM Sans", sans-serif;
-          }
-  
-          * { box-sizing: border-box; }
-  
-          html { scroll-behavior: smooth; }
-  
-          body {
-              margin: 0;
-              min-width: 320px;
-              background-color: var(--ink);
-              background-image: radial-gradient(#ffffff12 0.65px, transparent 0.65px);
-              background-size: 8px 8px;
-              color: var(--paper);
-          }
-  
-          a { color: inherit; }
-  
-          .shell {
-              width: min(1220px, calc(100% - 64px));
-              margin: 0 auto;
-          }
-  
-          
- 
-         .nav-inner {
-             min-height: 76px;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-          }
-  
-          .brand {
-              display: inline-flex;
-              align-items: center;
-            gap: 8px;
-              text-decoration: none;
-            font: 700 25px "Space Grotesk", sans-serif;
-              letter-spacing: 0;
-            text-transform: lowercase;
-          }
-  
-          .brand-mark {
-            display: block;
-            flex: 0 0 114px;
-            width: 114px;
-            height: 62px;
-            object-fit: cover;
-            object-position: center 20%;
-          }
-  
-        .topbar nav { display: flex; align-items: center; gap: 28px; }
-  
-          .topbar nav a {
-              color: var(--muted);
-            font-size: 17px;
-            font-weight: 600;
-              text-decoration: none;
-              transition: color 160ms ease;
-          }
-  
-          .topbar nav a:hover, .topbar nav a:focus-visible { color: var(--lime); }
- 
-        .topbar nav a:last-child {
-            padding: 12px 18px;
-            border-radius: 28px;
-            background: #1b1221;
-            color: var(--paper);
-         }
- 
-        .topbar nav a:last-child:hover, .topbar nav a:last-child:focus-visible {
-            background: #2b1935;
-         }
-  
-          .intro {
-              padding: 104px 0 72px;
-              position: relative;
-              overflow: hidden;
-          }
-  
-          .eyebrow {
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              margin: 0 0 22px;
-              color: var(--lime);
-              font-size: 12px;
-              font-weight: 700;
-              text-transform: uppercase;
-          }
-  
-          .eyebrow::before {
-              content: "";
-              width: 22px;
-              height: 2px;
-              background: var(--lime);
-          }
-  
-          h1, h2, p { margin-top: 0; }
-  
-          h1 {
-              max-width: 850px;
-              margin-bottom: 24px;
-              font: 600 clamp(48px, 7vw, 88px)/0.99 "Space Grotesk", sans-serif;
-              letter-spacing: 0;
-          }
-  
-          h1 span {
-              color: var(--violet);
-              white-space: nowrap;
-          }
-  
-          .intro-copy {
-              max-width: 475px;
-              margin-bottom: 0;
-              color: var(--muted);
-              font-size: 16px;
-              line-height: 1.7;
-          }
-  
-          .team-section { padding-bottom: 92px; }
-  
-          .section-heading {
-              display: flex;
-              align-items: baseline;
-              justify-content: space-between;
-              padding: 18px 0;
-              border-top: 1px solid var(--line);
-              color: var(--muted);
-              font-size: 12px;
-              text-transform: uppercase;
-          }
-  
-          .section-heading strong {
-              color: var(--paper);
-              font-weight: 500;
-          }
-  
-          .team-grid {
-              display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-              gap: 22px;
-          }
-  
-          .member {
-              min-width: 0;
-              animation: rise-in 650ms both;
-          }
-  
+    <hr>
 
-  
-          .portrait {
-              position: relative;
-              overflow: hidden;
-              aspect-ratio: 0.82;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             isolation: isolate;
-             background: var(--violet);
-         }
- 
-         .portrait::before {
-             position: absolute;
-             z-index: -1;
-             width: 82%;
-             aspect-ratio: 1;
-             border: 1px solid #ffffff70;
-             border-radius: 50%;
-             content: "";
-             transform: translate(23%, 18%);
-          }
-  
-          .portrait::after {
-              position: absolute;
-             inset: 12px;
-             border: 1px solid #ffffff55;
-              content: "";
-              pointer-events: none;
-          }
-  
-         .portrait-initials {
-             position: relative;
-             z-index: 1;
-             font: 600 clamp(64px, 8vw, 118px)/1 "Space Grotesk", sans-serif;
-             letter-spacing: 0;
-             color: var(--ink);
-             transition: transform 300ms ease;
-          }
-  
-         .member:hover .portrait-initials {
-             transform: rotate(-5deg) scale(1.06);
-         }
- 
-         .portrait--maya { background: var(--violet); }
-         .portrait--jordan { background: var(--lime); }
-         .portrait--amara { background: #f5f3f7; }
-         .portrait--theo { background: #d44dff; }
- 
-         .portrait--jordan::before { transform: translate(-22%, 18%); }
-         .portrait--amara::before { border-color: #00000055; transform: translate(23%, -18%); }
-         .portrait--theo::before { transform: translate(-22%, -18%); }
-         .portrait--amara::after { border-color: #00000055; }
-  
-          .member-meta {
-              display: flex;
-              align-items: baseline;
-              justify-content: space-between;
-              gap: 8px;
-              padding: 17px 0 8px;
-              border-bottom: 1px solid var(--line);
-          }
-  
-          .member h2 {
-              margin: 0;
-            font: 600 18px/1.2 "Space Grotesk", sans-serif;
-              letter-spacing: 0;
-          }
-  
-        .member-id {
-            display: flex;
-            justify-content: space-between;
-            gap: 8px;
-            margin: 10px 0 0;
-            padding-bottom: 9px;
-            border-bottom: 1px solid var(--line);
-            color: var(--muted);
-            font-size: 11px;
-        }
+    <main>
+        <section id="team" aria-labelledby="team-heading">
+            <h1 id="team-heading">Meet the team</h1>
+            <p>Five minds, one direction.</p>
 
-        .member-id span { color: var(--violet); font-weight: 700; }
+            <article>
+                <h2>Zayneb Khadimallah</h2>
+                <p><strong>Student ID:</strong> 300535447</p>
+                <p>Brings a thoughtful perspective and a collaborative spirit to every group project.</p>
+            </article>
 
-        .member-meta {
-            min-height: 58px;
-            padding-bottom: 0;
-            border-bottom: 0;
-          }
-  
-          .role {
-              margin: 10px 0 7px;
-              color: var(--lime);
-              font-size: 12px;
-              font-weight: 600;
-          }
-  
-          .bio {
-              max-width: 260px;
-              margin-bottom: 0;
-              color: var(--muted);
-              font-size: 13px;
-              line-height: 1.6;
-          }
-  
-          footer {
-              display: flex;
-              justify-content: space-between;
-              gap: 20px;
-              padding: 22px 0 28px;
-              border-top: 1px solid var(--line);
-              color: var(--muted);
-              font-size: 12px;
-          }
-  
-          footer strong { color: var(--paper); font-weight: 500; }
-  
-          @keyframes rise-in {
-              from { opacity: 0; transform: translateY(16px); }
-              to { opacity: 1; transform: translateY(0); }
-          }
-  
-          @media (max-width: 900px) {
-              .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 20px; }
-              .intro { padding: 82px 0 58px; }
-              .bio { max-width: 340px; }
-          }
-  
-          @media (max-width: 560px) {
-              .shell { width: min(100% - 36px, 440px); }
-            .nav-inner { min-height: 0; flex-wrap: wrap; gap: 8px; padding: 10px 0; }
-            .brand { font-size: 22px; }
-            .topbar nav { width: 100%; justify-content: space-between; gap: 8px; }
-            .topbar nav a { font-size: 12px; }
-            .topbar nav a:first-child { padding: 8px 12px; }
-              .intro { padding: 69px 0 46px; }
-              h1 { font-size: 53px; }
-              .intro-copy { font-size: 14px; }
-              .team-grid { gap: 30px 14px; }
-            .member h2 { font-size: 16px; }
-              .member-meta { align-items: start; }
-              .bio { font-size: 12px; }
-              .team-section { padding-bottom: 62px; }
-              footer { font-size: 11px; }
-          }
-  
-          @media (prefers-reduced-motion: reduce) {
-              *, *::before, *::after {
-                  scroll-behavior: auto !important;
-                  animation-duration: 0.01ms !important;
-                  animation-iteration-count: 1 !important;
-                  transition-duration: 0.01ms !important;
-              }
-          }
-      </style>
-  </head>
-  <body>
-     <header class="topbar">
-         <div class="shell nav-inner">
-            <a class="brand" href="#top" aria-label="Motive home">
-              <img class="brand-mark" src="mockups/logo.png" alt="Motive logo">
-                <span>motive</span>
-             </a>
-             <nav aria-label="Main navigation">
-              <a href="home.html">Home</a>
-              <a href="features.html">Product Features</a>
-              <a href="pricing.html">Pricing</a>
-              <a href="team.html" aria-current="page">Team</a>
-             </nav>
-         </div>
-      </header>
-  
-      <main id="top" class="shell">
-         <section id="about" class="intro" aria-labelledby="page-title">
-            <p class="eyebrow">Groupe 16 · Meet the team</p>
-            <h1 id="page-title">Good work.<br><span>Good people.</span></h1>
-              <p class="intro-copy">A curious crew of makers, thinkers, and problem-solvers. Different perspectives, one shared drive to make things matter.</p>
-          </section>
-  
-          <section id="team" class="team-section" aria-labelledby="team-heading">
-              <div class="section-heading">
-                <strong id="team-heading">Meet the team</strong>
-                <span>Five minds, one direction</span>
-              </div>
-              <div class="team-grid">
-                  <article class="member">
-                    <div class="portrait portrait--maya" role="img" aria-label="Zayneb Khadimallah">
-                        <span class="portrait-initials" aria-hidden="true">ZK</span>
-                      </div>
-                      <div class="member-meta">
-                        <h2>Zayneb Khadimallah</h2>
-                      </div>
-                    <p class="member-id">Student ID <span>300535447</span></p>
-                    <p class="bio">Brings a thoughtful perspective and a collaborative spirit to every group project.</p>
-                  </article>
-  
-                  <article class="member">
-                    <div class="portrait portrait--jordan" role="img" aria-label="Beshoy Abdou">
-                        <span class="portrait-initials" aria-hidden="true">BA</span>
-                      </div>
-                      <div class="member-meta">
-                        <h2>Beshoy Abdou</h2>
-                      </div>
-                    <p class="member-id">Student ID <span>300526750</span></p>
-                    <p class="bio">Enjoys turning new ideas into practical solutions through teamwork and clear communication.</p>
-                  </article>
-  
-                  <article class="member">
-                    <div class="portrait portrait--amara" role="img" aria-label="Mobolaoluwabo Oyeyiola">
-                        <span class="portrait-initials" aria-hidden="true">MO</span>
-                      </div>
-                      <div class="member-meta">
-                        <h2>Mobolaoluwabo Oyeyiola</h2>
-                      </div>
-                    <p class="member-id">Student ID <span>300561715</span></p>
-                    <p class="bio">Contributes fresh thinking and steady attention to detail throughout the group's work.</p>
-                  </article>
-  
-                  <article class="member">
-                    <div class="portrait portrait--theo" role="img" aria-label="Bwitonzi Alva">
-                        <span class="portrait-initials" aria-hidden="true">BA</span>
-                      </div>
-                      <div class="member-meta">
-                        <h2>Bwitonzi Alva</h2>
-                      </div>
-                    <p class="member-id">Student ID <span>300432891</span></p>
-                    <p class="bio">Helps keep the team focused, organized, and moving toward a shared goal.</p>
-                </article>
+            <article>
+                <h2>Beshoy Abdou</h2>
+                <p><strong>Student ID:</strong> 300526750</p>
+                <p>Enjoys turning new ideas into practical solutions through teamwork and clear communication.</p>
+            </article>
 
-                <article class="member">
-                    <div class="portrait portrait--maya" role="img" aria-label="Shrikrishna Swami">
-                        <span class="portrait-initials" aria-hidden="true">SS</span>
-                    </div>
-                    <div class="member-meta">
-                        <h2>Shrikrishna Swami</h2>
-                    </div>
-                    <p class="member-id">Student ID <span>300553472</span></p>
-                    <p class="bio">Brings an open mind and a dependable, team-first approach to the group.</p>
-                  </article>
-              </div>
-          </section>
-      </main>
-  
-     <footer id="contact" class="shell">
-           <span><strong>MOTIVE</strong> &copy; 2026</span>
-          <span>Made by people, for people.</span>
-      </footer>
-  </body>
-  </html>
-  
+            <article>
+                <h2>Mobolaoluwabo Oyeyiola</h2>
+                <p><strong>Student ID:</strong> 300561715</p>
+                <p>Contributes fresh thinking and steady attention to detail throughout the group's work.</p>
+            </article>
+
+            <article>
+                <h2>Bwitonzi Alva</h2>
+                <p><strong>Student ID:</strong> 300432891</p>
+                <p>Helps keep the team focused, organized, and moving toward a shared goal.</p>
+            </article>
+
+            <article>
+                <h2>Shrikrishna Swami</h2>
+                <p><strong>Student ID:</strong> 300553472</p>
+                <p>Brings an open mind and a dependable, team-first approach to the group.</p>
+            </article>
+        </section>
+    </main>
+
+    <hr>
+
+    <footer>
+        Group 16 · SEG2900 | Motive
+    </footer>
+</body>
+</html>
