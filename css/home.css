@@ -1,0 +1,90 @@
+/* ==========================================================
+   Motive: Home page styles (css/home.css)
+   Used by home.html only, AFTER css/style.css.
+   Sections: 1. hero banner  2. app-screen wall behind the hero
+             3. picture + "How it works" box  4. small screens
+   Owner: Beshoy.
+   ========================================================== */
+
+/* ---------- 1. Hero banner: headline + Get Motive button ---------- */
+.hero { position: relative; isolation: isolate; overflow: hidden; margin-inline: -20px; padding: 148px 20px 176px; text-align: center; background: #000; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background:
+  radial-gradient(ellipse 60% 55% at 50% 48%, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.35) 100%),
+  linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.85) 100%); }
+.hero::after { content: ""; position: absolute; z-index: 2; left: -12%; right: -12%; bottom: -135px; height: 215px; background: #000; border-radius: 50% 50% 0 0 / 100% 100% 0 0; border-top: 3px solid var(--purple-soft); box-shadow: 0 -10px 60px rgba(155,48,255,0.6); }
+.hero-content { position: relative; z-index: 3; max-width: 860px; margin-inline: auto; }
+.hero h1 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 600; letter-spacing: -0.01em; text-shadow: 0 2px 30px rgba(0,0,0,0.7); }
+.hero .btn { margin-top: 32px; }
+
+/* ---------- 2. App-screen wall (decorative, behind the hero) ---------- */
+.wall { position: absolute; z-index: 0; left: 50%; top: 50%; width: 1700px; display: flex; gap: 20px; transform: translate(-50%, -50%) rotate(-12deg); opacity: 0.62; pointer-events: none; }
+.wall-col { flex: 1; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.wall-col:nth-child(odd) { margin-top: -70px; }
+.wall-col:nth-child(3n) { margin-top: 40px; }
+.tile { background: #0F0A15; border: 1px solid #33243F; border-radius: 22px; padding: 14px; }
+.t-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.72rem; color: var(--muted); }
+.t-top b { font-family: var(--font-display); font-size: 1rem; color: var(--fg); font-weight: 600; }
+.t-label { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 10px 0 6px; }
+.avatars { display: flex; justify-content: center; margin-top: 14px; }
+.av { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; border: 3px solid #0F0A15; margin-left: -9px; }
+.av:first-child { margin-left: 0; }
+.av.a { background: var(--purple); color: #fff; }
+.av.b { background: var(--lime); color: #06240A; }
+.av.c { background: #D9B8FF; color: #2A0A52; }
+.av.d { background: #3A2C4C; color: #fff; }
+.ring { width: 96px; height: 96px; border-radius: 50%; margin: 14px auto 4px; display: grid; place-items: center; background: conic-gradient(var(--lime) 0 var(--p, 92%), #2B2038 0); }
+.ring-in { width: 78px; height: 78px; border-radius: 50%; background: #0F0A15; display: grid; place-items: center; }
+.ring-in b { font-family: var(--font-display); font-size: 1.5rem; }
+.picks { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.pick { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; background: var(--surface-2); border-radius: 14px; padding: 9px 12px; }
+.pick b { font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; }
+.pick em { font-style: normal; color: var(--lime); font-weight: 700; font-size: 0.82rem; align-self: center; grid-row: span 2; grid-column: 2; }
+.pick span { font-size: 0.7rem; color: var(--muted); }
+.chips-s { display: flex; flex-wrap: wrap; gap: 6px; }
+.cs { border: 1px solid #3A2C4C; border-radius: 999px; padding: 5px 12px; font-size: 0.78rem; font-weight: 500; color: var(--fg); }
+.cs.on { background: var(--purple); border-color: var(--purple); color: #fff; font-weight: 700; }
+.bub { background: var(--surface-2); border-radius: 16px 16px 16px 5px; padding: 8px 13px; font-size: 0.8rem; margin-top: 8px; max-width: 85%; }
+.bub.me { margin-left: auto; background: #2A1B3D; border-radius: 16px 16px 5px 16px; }
+.bub.mo { max-width: none; background: var(--purple); color: #fff; border-radius: 16px; font-weight: 500; }
+.t-img { height: 110px; border-radius: 14px; background: linear-gradient(135deg, var(--purple), #3B0E73 55%, #0F0A15); position: relative; overflow: hidden; }
+.t-img.alt { background: linear-gradient(135deg, #2F6B22, var(--lime) 120%); }
+.t-img::after { content: ""; position: absolute; width: 90px; height: 90px; border-radius: 50%; right: -20px; bottom: -30px; background: rgba(255,255,255,0.14); }
+.t-name { font-family: var(--font-display); font-weight: 600; font-size: 1rem; margin-top: 10px; }
+.t-meta { font-size: 0.74rem; color: var(--muted); }
+.frow { display: flex; align-items: center; gap: 10px; margin-top: 9px; font-size: 0.82rem; }
+.frow .av { width: 30px; height: 30px; font-size: 0.78rem; margin: 0; border: 0; }
+.frow .st { margin-left: auto; font-size: 0.68rem; font-weight: 700; color: var(--lime); }
+.frow .st.wait { color: var(--muted); }
+/* match rings: percentage filled in lime */
+.ring.p92 { --p: 92%; }
+.ring.p87 { --p: 87%; }
+
+/* ---------- 3. Picture + "How it works" (glass box over the picture) ---------- */
+.section { padding-block: 24px 80px; }
+.picture { width: 100%; border-radius: 32px; overflow: hidden; border: 1px solid #4B3566; }
+.picture img { display: block; width: 100%; height: auto; }
+
+.stage { position: relative; margin-block: 24px 80px; }
+/* the box overlaps only the empty bottom edge of the picture, so the place names stay visible */
+.how { position: relative; margin: -110px auto 0; width: min(94%, 1000px); background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04)), rgba(16,10,24,0.34); -webkit-backdrop-filter: blur(22px) saturate(150%); backdrop-filter: blur(22px) saturate(150%); border: 1px solid rgba(255,255,255,0.24); box-shadow: 0 24px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.28); border-radius: 32px; padding: 32px 40px 36px; }
+.how h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); letter-spacing: -0.01em; }
+.how-steps { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+.how-step { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; align-content: start; padding-right: 28px; min-width: 0; }
+.how-step + .how-step { border-left: 1px solid var(--line); padding-left: 32px; }
+.how-step .n { grid-row: span 2; width: 44px; height: 44px; border-radius: 50%; background: var(--lime); color: #06240A; font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; display: grid; place-items: center; }
+.how-step h3 { font-size: 1.25rem; align-self: end; }
+.how-step p { color: #E2D8EE; font-size: 0.98rem; line-height: 1.45; }
+
+/* ---------- 4. Small screens ---------- */
+@media (max-width: 860px) {
+  .how { width: 92%; margin: -36px auto 0; padding: 28px 24px 32px; }
+  .how-steps { grid-template-columns: 1fr; gap: 24px; }
+  .how-step, .how-step + .how-step { border-left: 0; padding-left: 0; padding-right: 0; }
+  .how-step + .how-step { border-top: 1px solid var(--line); padding-top: 24px; }
+}
+@media (max-width: 720px) {
+  .hero { padding: 100px 20px 140px; }
+  .wall { width: 1250px; }
+  .section { padding-block: 8px 56px; }
+  .picture { border-radius: 24px; }
+}

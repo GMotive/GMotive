@@ -4,55 +4,102 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Motive | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
-  <header>
-    <p><a href="home.html"><strong>Motive</strong></a></p>
-    <nav aria-label="Main">
-      <a href="home.html">Home</a> |
-      <a href="features.html">Product Features</a> |
-      <a href="pricing.html">Pricing</a> |
-      <a href="team.html">Team</a>
-    </nav>
-  </header>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="home.html" aria-label="Motive home">
+      <img src="images/logo.webp" alt="Motive logo">
+      <span>motive</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="home.html" aria-current="page">Home</a></li>
+      <li><a href="features.html">Product Features</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
+  </div>
+</header>
 
-  <hr>
+<!-- HERO: app-screen wall behind centered headline + button -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wall" aria-hidden="true">
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Friday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring p92"><div class="ring-in"><b>92%</b></div></div></div>
+      <div class="tile"><div class="t-top"><b>Group chat</b><span>4 friends</span></div><div class="bub">where should we go?</div><div class="bub me">idk, you pick</div><div class="bub">im fine with anything</div><div class="bub mo">Found 6 places for all of you</div></div>
+      <div class="tile"><div class="t-top"><b>Saturday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring p87"><div class="ring-in"><b>87%</b></div></div></div>
+      <div class="tile"><div class="t-top"><b>Filters</b><span>Your answers</span></div><div class="t-label">Area</div><div class="chips-s"><span class="cs">Walking distance</span><span class="cs on">Under 15 min</span></div><div class="t-label">Extras</div><div class="chips-s"><span class="cs on">Vegetarian friendly</span><span class="cs">Dog friendly</span></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st">Ready</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av c">M</span><span>Maya</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st wait">Picking…</span></div></div>
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>Flying Squirrel</b><em>93%</em><span>Trampoline park · $$ · 15 min</span></div><div class="pick"><b>Cineplex</b><em>89%</em><span>Movies · $$ · 12 min</span></div><div class="pick"><b>Mandarin</b><em>86%</em><span>Buffet · $$ · 11 min</span></div></div></div>
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st">Ready</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st wait">Picking…</span></div></div>
+      <div class="tile"><div class="t-top"><b>Friday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring p92"><div class="ring-in"><b>92%</b></div></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Group chat</b><span>4 friends</span></div><div class="bub">somewhere cheap?</div><div class="bub me">and not loud</div><div class="bub">ok found a few</div><div class="bub mo">Found 6 places for all of you</div></div>
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>Starbucks</b><em>92%</em><span>Coffee · $ · 6 min</span></div><div class="pick"><b>Dairy Queen</b><em>90%</em><span>Dessert · $ · 9 min</span></div><div class="pick"><b>Boston Pizza</b><em>85%</em><span>Casual dining · $$ · 14 min</span></div></div></div>
+      <div class="tile"><div class="t-top"><b>Filters</b><span>Your answers</span></div><div class="t-label">Budget</div><div class="chips-s"><span class="cs">$</span><span class="cs on">$$</span><span class="cs">$$$</span></div><div class="t-label">Mood</div><div class="chips-s"><span class="cs on">Chill</span><span class="cs">Lively</span><span class="cs">Foodie</span></div></div>
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st">Ready</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av c">M</span><span>Maya</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st wait">Picking…</span></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>McDonald's</b><em>96%</em><span>Fast food · $ · 8 min</span></div><div class="pick"><b>Burger King</b><em>91%</em><span>Fast food · $ · 10 min</span></div><div class="pick"><b>Tim Hortons</b><em>88%</em><span>Coffee · $ · 5 min</span></div></div></div>
+      <div class="tile"><div class="t-img"></div><div class="t-name">Flying Squirrel</div><div class="t-meta">Trampoline park · $$ · 94% match</div></div>
+      <div class="tile"><div class="t-img alt"></div><div class="t-name">Mandarin</div><div class="t-meta">Buffet · $$ · 90% match</div></div>
+      <div class="tile"><div class="t-top"><b>Group chat</b><span>4 friends</span></div><div class="bub">somewhere cheap?</div><div class="bub me">and not loud</div><div class="bub">ok found a few</div><div class="bub mo">Found 6 places for all of you</div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Saturday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring p87"><div class="ring-in"><b>87%</b></div></div></div>
+      <div class="tile"><div class="t-top"><b>Filters</b><span>Your answers</span></div><div class="t-label">Area</div><div class="chips-s"><span class="cs">Walking distance</span><span class="cs on">Under 15 min</span></div><div class="t-label">Extras</div><div class="chips-s"><span class="cs on">Vegetarian friendly</span><span class="cs">Dog friendly</span></div></div>
+      <div class="tile"><div class="t-img"></div><div class="t-name">Boston Pizza</div><div class="t-meta">Casual dining · $$ · 88% match</div></div>
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>McDonald's</b><em>96%</em><span>Fast food · $ · 8 min</span></div><div class="pick"><b>Burger King</b><em>91%</em><span>Fast food · $ · 10 min</span></div><div class="pick"><b>Tim Hortons</b><em>88%</em><span>Coffee · $ · 5 min</span></div></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st">Ready</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st wait">Picking…</span></div></div>
+      <div class="tile"><div class="t-top"><b>Friday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring p92"><div class="ring-in"><b>92%</b></div></div></div>
+      <div class="tile"><div class="t-top"><b>Group chat</b><span>4 friends</span></div><div class="bub">where should we go?</div><div class="bub me">idk, you pick</div><div class="bub">im fine with anything</div><div class="bub mo">Found 6 places for all of you</div></div>
+      <div class="tile"><div class="t-top"><b>Saturday night</b><span>Blend of 4</span></div><div class="avatars"><span class="av a">A</span><span class="av b">J</span><span class="av c">M</span><span class="av d">S</span></div><div class="ring p87"><div class="ring-in"><b>87%</b></div></div></div>
+    </div>
+    <div class="wall-col">
+      <div class="tile"><div class="t-top"><b>Filters</b><span>Your answers</span></div><div class="t-label">Budget</div><div class="chips-s"><span class="cs">$</span><span class="cs on">$$</span><span class="cs">$$$</span></div><div class="t-label">Mood</div><div class="chips-s"><span class="cs on">Chill</span><span class="cs">Lively</span><span class="cs">Foodie</span></div></div>
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st">Ready</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av c">M</span><span>Maya</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st wait">Picking…</span></div></div>
+      <div class="tile"><div class="t-top"><b>Top picks</b><span>For all 4</span></div><div class="picks"><div class="pick"><b>Flying Squirrel</b><em>93%</em><span>Trampoline park · $$ · 15 min</span></div><div class="pick"><b>Cineplex</b><em>89%</em><span>Movies · $$ · 12 min</span></div><div class="pick"><b>Mandarin</b><em>86%</em><span>Buffet · $$ · 11 min</span></div></div></div>
+      <div class="tile"><div class="t-top"><b>Who's in</b><span>Saturday</span></div><div class="frow"><span class="av b">J</span><span>Jordan</span><span class="st">Ready</span></div><div class="frow"><span class="av d">S</span><span>Sam</span><span class="st">Ready</span></div><div class="frow"><span class="av a">A</span><span>Alex</span><span class="st wait">Picking…</span></div></div>
+    </div>
 
-  <main>
+  </div>
+  <div class="hero-content">
+    <h1 id="hero-title">One ranked list from everyone’s picks.</h1>
+    <a class="btn btn-lime" href="features.html">Get Motive
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
 
-    <section>
-      <h1>One ranked list from everyone's picks.</h1>
-     <p><a href="features.html">Get GMotive</a></p>
-    </section>
+<main class="wrap">
+  <!-- PICTURE: chosen by a teammate (mockups/Motive Home.PNG) -->
+  <section class="stage" aria-label="Picture and how it works">
+    <div class="picture"><img src="mockups/Motive Home.PNG" alt="Hangout ideas: Flying Squirrel, Cineplex and Mandarin"></div>
 
-    <hr>
+    <!-- HOW IT WORKS: single box, sits over the picture -->
+    <div class="how" role="group" aria-labelledby="how-title">
+    <h2 id="how-title">How it works</h2>
+    <ol class="how-steps">
+      <li class="how-step"><div class="n">1</div><h3>Start a blend</h3><p>Invite your friends with one link.</p></li>
+      <li class="how-step"><div class="n">2</div><h3>Set your filters</h3><p>Everyone picks a budget, area and mood.</p></li>
+      <li class="how-step"><div class="n">3</div><h3>Pick from one list</h3><p>Motive ranks the places that fit the whole group.</p></li>
+    </ol>
+    </div>
+  </section>
+</main>
 
-    <!-- Picture: the team's chosen picture will go in this section. -->
-    <section>
-     <img src="mockups/Motive Home.PNG"
-     alt="Hangout ideas: Flying Squirrel, Cineplex and Mandarin"
-     style="max-width:100%; height:auto;">
-    </section>
-
-    <hr>
-
-    <section>
-      <h2>How it works</h2>
-      <ol>
-        <li><strong>Start a blend.</strong> Invite your friends with one link.</li>
-        <li><strong>Set your filters.</strong> Everyone picks a budget, an area and a mood.</li>
-        <li><strong>Pick from one list.</strong> Motive ranks the places that fit the whole group.</li>
-      </ol>
-    </section>
-
-  </main>
-
-  <hr>
-
-  <footer>
-    <p>Group 16 &middot; SEG2900</p>
-  </footer>
+<footer class="footer">Group 16 · SEG2900</footer>
 
 </body>
 </html>
