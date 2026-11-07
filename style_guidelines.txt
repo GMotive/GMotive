@@ -1,0 +1,141 @@
+MOTIVE - STYLE GUIDELINES
+Group 16 | SEG2900 | Deliverable 3
+Prepared for Zayneb's documentation contribution
+
+1. PURPOSE AND DESIGN DIRECTION
+Motive helps friends discover places to hang out and choose together.
+Use an exciting, social visual style with a dark background, purple accents,
+lime calls to action, rounded shapes and readable text.
+These guidelines document the group's agreed colours and the typography,
+spacing and components already defined in css/style.css and css/home.css.
+Use this existing implementation as the shared baseline for all four pages.
+
+2. COLOUR PALETTE
+Agreed brand colours:
+- Primary: Rich Amethyst, #9B30FF. Use for brand accents, selected chips,
+  decorative highlights and purple glow effects.
+- Secondary: Lime Green, #71E651. Use for primary action buttons,
+  step numbers and positive indicators.
+- Background: Jet Black, #000000. Use as the main page background.
+
+Supporting colours already defined in the shared stylesheet:
+- Main text: #F6F2FB (--fg).
+- Secondary text: #B3A7C2 (--muted).
+- Dark surfaces: #0D0912 (--surface) and #17101F (--surface-2).
+- Dividers: #2B2038 (--line).
+- Light purple accent: #C48BFF (--purple-soft).
+- Text on lime buttons: #06240A.
+Use the shared CSS variables rather than introducing different brand colours.
+Keep paragraph text light against dark backgrounds. Do not communicate a
+selection or status through colour alone; include text or another clear cue.
+
+3. TYPOGRAPHY
+Fonts already selected in the shared CSS and loaded by home.html:
+- Headings, wordmark and buttons: Fredoka.
+  Fallbacks: "Trebuchet MS", system-ui, sans-serif.
+- Body text: DM Sans.
+  Fallbacks: system-ui, -apple-system, "Segoe UI", sans-serif.
+- Body size: 17px; reduce to 16px at viewport widths of 720px or less.
+- Body line-height: 1.6.
+- Main headings (h1, h2, h3): weight 600 and line-height 1.05.
+- Home headline: clamp(1.7rem, 3.4vw, 2.5rem).
+- "How it works" heading: clamp(1.6rem, 3.4vw, 2.2rem).
+- Primary button label: 1.75rem, reduced to 1.4rem on small screens.
+Keep a clear heading hierarchy. Avoid using small decorative tile text for
+essential page information.
+Each page using these fonts must load the font stylesheet or inherit a
+deliberately shared font-loading setup; a font-family declaration alone
+does not download a font.
+
+4. LAYOUT AND SPACING
+Existing shared layout:
+- Main content maximum width: 1120px, centred with automatic side margins.
+- Page side padding: 20px.
+- Navigation padding: 12px vertically.
+- Navigation logo-to-content gap: 28px.
+- Menu item padding: 8px vertically and 14px horizontally; menu gap: 6px.
+- Primary button padding: 22px vertically and 60px horizontally.
+- Footer padding: 32px above and 40px below.
+
+Existing Home examples:
+- Decorative tile padding: 14px; gaps between tiles: 20px.
+- Main action button separation from headline: 32px.
+- "How it works" panel padding: 32px 40px 36px.
+- Steps begin 32px below their section heading.
+- On smaller screens, stacked steps have a 24px gap.
+Use comparable spacing on Features, Pricing and Team, adjusting it for
+their content. The large Home hero spacing is specific to that banner
+and should not be copied onto every section.
+
+5. SHARED NAVIGATION AND FOOTER
+Use the same logo, wordmark, menu order and footer style across pages.
+Navigation destinations:
+- Home -> home.html
+- Product Features -> features.html
+- Pricing -> pricing.html
+- Team -> team.html
+Mark the current page with aria-current="page".
+Reuse .nav, .nav-inner, .brand and .nav-links with matching HTML structure.
+The navigation uses a translucent black background, a subtle bottom
+divider and a sticky position.
+Menu hover and active states use the dark alternate surface with light text.
+The footer uses a top divider, centred secondary text and the .footer class.
+
+6. BUTTONS, CARDS AND IMAGES
+Reuse .btn and .btn-lime for the main action.
+Primary buttons are pill-shaped, with lime backgrounds and dark labels.
+Hover raises the primary button by 2px and strengthens its glow.
+Existing card rounding: 22px for decorative tiles; 14px for small pick cards.
+Large Home picture and information panel rounding: 32px.
+Use similar rounded panels for pricing plans, feature groups and team cards.
+Preserve image proportions and avoid stretching.
+The Home picture scales to 100% of its container with automatic height.
+The shared navigation logo is 38px tall with automatic width.
+Keep text readable where a photograph or gradient sits behind it.
+Put working buttons and links in HTML so that users can interact with them;
+text drawn inside a banner image is part of the image.
+
+7. SMALL SCREENS AND ACCESSIBILITY
+Existing breakpoints:
+- At 860px or less, Home's three steps stack into one column and the
+  information panel uses smaller padding.
+- At 720px or less, body text and buttons become smaller, navigation
+  links move onto a full-width row, and the Home picture radius is 24px.
+Allow Features, Pricing and Team cards to stack when space is limited.
+Check each page on a narrow screen for clipped text or horizontal overflow.
+Keep the existing visible keyboard focus outline: 3px lime, offset 3px.
+Retain the reduced-motion rule for users who request less animation.
+Use meaningful image alt text; mark purely decorative visuals accordingly.
+FAQ buttons should update aria-expanded when their answer visibility changes.
+Check readability, keyboard operation and contrast during the final review.
+
+8. CSS AND JAVASCRIPT ORGANISATION
+Keep common theme and component rules in css/style.css.
+Load that stylesheet before each page-specific stylesheet.
+Existing Home example:
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+Suggested remaining page stylesheets:
+- css/features.css
+- css/pricing.css
+- css/team.css
+These three filenames are proposed; they are not present in the reviewed
+repository version.
+Keep page-specific selectors scoped to their page components.
+Store JavaScript files in a consistent folder, such as js/, and link each
+file from the page that uses it. Use defer for scripts loaded in the head.
+When extracting an existing inline script, remove the old copy to avoid
+running the same behaviour twice.
+The FAQ accordion is a proposed interaction. A monthly/yearly pricing
+switch is optional and should only be used if the group defines both prices.
+
+9. FINAL CONSISTENCY CHECK
+Before submission, check that:
+- All four pages load css/style.css and their appropriate page styles.
+- Colours, fonts, navigation and footer follow this document.
+- All four navigation links and image paths work.
+- Page layouts remain readable on desktop and narrow screens.
+- JavaScript behaviours work with keyboard as well as pointer input.
+- All required CSS and JavaScript files are committed to GitHub.
+- style_guidelines.txt is committed to GitHub.
+- Each member reviews and commits their assigned contribution.
