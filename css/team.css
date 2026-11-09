@@ -1,0 +1,72 @@
+/* Team page styles. Shared colours and fonts come from style.css. */
+
+.team-navigation {
+  margin-left: auto;
+}
+
+.team-main {
+  padding-block: 64px 80px;
+}
+
+#team {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+#team > h1,
+#team > p {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+#team > h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+#team > p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+#team article {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  min-width: 0;
+}
+
+#team article h2 {
+  color: var(--purple-soft);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+#team article p {
+  margin-top: 16px;
+}
+
+#team article p:last-child {
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .team-navigation {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .team-main {
+    padding-block: 40px 56px;
+  }
+
+  #team {
+    grid-template-columns: 1fr;
+  }
+
+  #team article {
+    padding: 24px;
+  }
+}
