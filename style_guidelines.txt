@@ -117,7 +117,7 @@ Page stylesheets:
 - Home: css/home.css
 - Pricing: css/pricing.css
 - Team: css/team.css
-- Features: css/features.css, to be completed by the Features owner.
+- Features: css/features.css
 
 Store JavaScript files in the js folder.
 Pricing uses js/pricing.js to open and close FAQ answers.
@@ -125,7 +125,7 @@ Load it in pricing.html using:
 <script src="js/pricing.js" defer></script>
 
 FAQ controls must update both answer visibility and aria-expanded.
-The Features owner will complete its FAQ styling and JavaScript.
+Features uses js/features.js to open and close FAQ answers.
 Remove any duplicate inline script when moving it to a separate file.
 
 A monthly/yearly pricing switch is optional and should only be
