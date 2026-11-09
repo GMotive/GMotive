@@ -1,145 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Meet the Team | Motive</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 20px;
-            background-color: #000;
-            color: #F6F2FB;
-            font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-            font-size: 17px;
-            line-height: 1.6;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meet the Team | Motive</title>
 
-        #top h3 {
-            margin-bottom: 8px;
-            font-family: Fredoka, "Trebuchet MS", system-ui, sans-serif;
-            color: #C48BFF;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 
-        a {
-            color: #C48BFF;
-        }
-
-        a:focus {
-            outline: 3px solid #71E651;
-        }
-
-        nav a[aria-current="page"] {
-            color: #71E651;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 35px auto;
-        }
-
-        #team {
-            text-align: center;
-        }
-
-        #team > h1 {
-            font-family: Fredoka, "Trebuchet MS", system-ui, sans-serif;
-        }
-
-        #team > p {
-            color: #B3A7C2;
-        }
-
-        #team article {
-            margin: 16px 0;
-            padding: 8px 20px;
-            border: 1px solid #2B2038;
-            border-radius: 10px;
-            background-color: #0D0912;
-            text-align: left;
-        }
-
-        #team article h2 {
-            color: #C48BFF;
-            font-family: Fredoka, "Trebuchet MS", system-ui, sans-serif;
-        }
-
-        footer {
-            margin-top: 35px;
-            padding: 15px 0;
-            color: #B3A7C2;
-            text-align: center;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                font-size: 16px;
-            }
-
-            main {
-                margin: 25px auto;
-            }
-
-            #team article {
-                padding: 6px 14px;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/team.css">
 </head>
 <body>
-    <header id="top">
-        <h3><a href="#top">Motive</a></h3>
-        <nav aria-label="Main navigation">
-            <a href="#top">Home</a> |
-            <a href="#team" aria-current="page">Team</a>
-        </nav>
-    </header>
 
-    <hr>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="home.html" aria-label="Motive home">
+        <img src="images/logo.webp" alt="Motive logo">
+        <span>motive</span>
+      </a>
 
-    <main>
-        <section id="team" aria-labelledby="team-heading">
-            <h1 id="team-heading">Meet the team</h1>
-            <p>Five minds, one direction.</p>
+      <nav class="team-navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="features.html">Product Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="team.html" aria-current="page">Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <article>
-                <h2>Zayneb Khadimallah</h2>
-                <p><strong>Student ID:</strong> 300535447</p>
-                <p>Brings a thoughtful perspective and a collaborative spirit to every group project.</p>
-            </article>
+  <main class="wrap team-main">
+    <section id="team" aria-labelledby="team-heading">
+      <h1 id="team-heading">Meet the team</h1>
+      <p>Five minds, one direction.</p>
 
-            <article>
-                <h2>Beshoy Abdou</h2>
-                <p><strong>Student ID:</strong> 300526750</p>
-                <p>Enjoys turning new ideas into practical solutions through teamwork and clear communication.</p>
-            </article>
+      <article>
+        <h2>Zayneb Khadimallah</h2>
+        <p><strong>Student ID:</strong> 300535447</p>
+        <p>Brings a thoughtful perspective and a collaborative spirit to every group project.</p>
+      </article>
 
-            <article>
-                <h2>Mobolaoluwabo Oyeyiola</h2>
-                <p><strong>Student ID:</strong> 300561715</p>
-                <p>Contributes fresh thinking and steady attention to detail throughout the group's work.</p>
-            </article>
+      <article>
+        <h2>Beshoy Abdou</h2>
+        <p><strong>Student ID:</strong> 300526750</p>
+        <p>Enjoys turning new ideas into practical solutions through teamwork and clear communication.</p>
+      </article>
 
-            <article>
-                <h2>Bwitonzi Alva</h2>
-                <p><strong>Student ID:</strong> 300432891</p>
-                <p>Helps keep the team focused, organized, and moving toward a shared goal.</p>
-            </article>
+      <article>
+        <h2>Mobolaoluwabo Oyeyiola</h2>
+        <p><strong>Student ID:</strong> 300561715</p>
+        <p>Contributes fresh thinking and steady attention to detail throughout the group's work.</p>
+      </article>
 
-            <article>
-                <h2>Shrikrishna Swami</h2>
-                <p><strong>Student ID:</strong> 300553472</p>
-                <p>Brings an open mind and a dependable, team-first approach to the group.</p>
-            </article>
-        </section>
-    </main>
+      <article>
+        <h2>Bwitonzi Alva</h2>
+        <p><strong>Student ID:</strong> 300432891</p>
+        <p>Helps keep the team focused, organized, and moving toward a shared goal.</p>
+      </article>
 
-    <hr>
+      <article>
+        <h2>Shrikrishna Swami</h2>
+        <p><strong>Student ID:</strong> 300553472</p>
+        <p>Brings an open mind and a dependable, team-first approach to the group.</p>
+      </article>
+    </section>
+  </main>
 
-    <footer>
-        Group 16 · SEG2900 | Motive
-    </footer>
+  <footer class="footer">
+    Group 16 · SEG2900 | Motive
+  </footer>
+
 </body>
 </html>
