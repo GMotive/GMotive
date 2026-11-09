@@ -110,24 +110,26 @@ FAQ buttons should update aria-expanded when their answer visibility changes.
 Check readability, keyboard operation and contrast during the final review.
 
 8. CSS AND JAVASCRIPT ORGANISATION
-Keep common theme and component rules in css/style.css.
-Load that stylesheet before each page-specific stylesheet.
-Existing Home example:
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/home.css">
-Suggested remaining page stylesheets:
-- css/features.css
-- css/pricing.css
-- css/team.css
-These three filenames are proposed; they are not present in the reviewed
-repository version.
-Keep page-specific selectors scoped to their page components.
-Store JavaScript files in a consistent folder, such as js/, and link each
-file from the page that uses it. Use defer for scripts loaded in the head.
-When extracting an existing inline script, remove the old copy to avoid
-running the same behaviour twice.
-The FAQ accordion is a proposed interaction. A monthly/yearly pricing
-switch is optional and should only be used if the group defines both prices.
+Keep shared colours, fonts, navigation, buttons and footer styles
+in css/style.css. Load it before each page-specific stylesheet.
+
+Page stylesheets:
+- Home: css/home.css
+- Pricing: css/pricing.css
+- Team: css/team.css
+- Features: css/features.css, to be completed by the Features owner.
+
+Store JavaScript files in the js folder.
+Pricing uses js/pricing.js to open and close FAQ answers.
+Load it in pricing.html using:
+<script src="js/pricing.js" defer></script>
+
+FAQ controls must update both answer visibility and aria-expanded.
+The Features owner will complete its FAQ styling and JavaScript.
+Remove any duplicate inline script when moving it to a separate file.
+
+A monthly/yearly pricing switch is optional and should only be
+included if the group defines both sets of prices.
 
 9. FINAL CONSISTENCY CHECK
 Before submission, check that:
