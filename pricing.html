@@ -1,162 +1,218 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Motive | Pricing</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Pricing page stylesheet -->
+  <link rel="stylesheet" href="css/pricing.css">
 </head>
+
 <body>
 
-  <!-- Header: company name and navigation links -->
-  <header>
-    <p><a href="home.html"><strong>Motive</strong></a></p>
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="nav-inner">
 
-    <!-- Navigation menu linking to the website pages -->
-    <nav aria-label="Main">
-      <a href="home.html">Home</a> |
-      <a href="features.html">Product Features</a> |
-      <a href="pricing.html">Pricing</a> |
-      <a href="team.html">Team</a>
-    </nav>
+      <a class="brand" href="home.html" aria-label="Motive home">
+        <img src="images/logo.webp" alt="Motive logo">
+        <span>motive</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="features.html">Product Features</a></li>
+        <li><a href="pricing.html" aria-current="page">Pricing</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+
+    </div>
   </header>
-
-  <hr>
 
   <main>
 
-    <!-- Introduction to the pricing page -->
-    <section>
-      <h1>The right plan for you</h1>
-      <p>Choose the plan that works best for your group.</p>
+    <!-- Pricing introduction -->
+    <section class="pricing-hero">
+      <p class="eyebrow">SIMPLE AND FLEXIBLE</p>
+
+      <h1>The right plan for you.</h1>
+
+      <p class="hero-description">
+        Choose the plan that works best for your group.
+        Make every hangout easier with Motive.
+      </p>
     </section>
 
-    <hr>
+    <!-- Pricing plans -->
+    <section class="pricing-container">
 
-    <!-- Starter plan: basic features -->
-    <section>
-      <h2>Starter</h2>
-      <p><strong>$19</strong> / month</p>
-      <p>Everything you need to get started.</p>
+      <!-- Starter plan -->
+      <article class="plan-card">
 
-      <p><strong>What's included:</strong></p>
-      <ul>
-        <li>Basic analytics</li>
-        <li>Email support</li>
-        <li>Discover popular places</li>
-        <li>Essential integrations</li>
-      </ul>
+        <h2>Starter</h2>
 
-      <!-- Email link for customers interested in the Starter plan -->
-      <p>
-        <a href="mailto:Motiveprice@gmail.com?subject=Starter%20Plan">
+        <p class="plan-description">
+          Everything you need to get started.
+        </p>
+
+        <p class="price">
+          <span>$19</span> / month
+        </p>
+
+        <hr>
+
+        <p class="features-title">What's included:</p>
+
+        <ul class="plan-features">
+          <li>Basic analytics</li>
+          <li>Email support</li>
+          <li>Discover popular places</li>
+          <li>Essential integrations</li>
+        </ul>
+
+        <a class="plan-button" href="mailto:Motiveprice@gmail.com?subject=Starter%20Plan">
           Get started
         </a>
-      </p>
-    </section>
 
-    <hr>
+      </article>
 
-    <!-- Pro plan: additional features -->
-    <section>
-      <h2>Pro</h2>
-      <p><strong>Most popular</strong></p>
-      <p><strong>$49</strong> / month</p>
-      <p>More power for growing teams.</p>
+      <!-- Pro plan -->
+      <article class="plan-card popular">
 
-      <p><strong>What's included:</strong></p>
-      <ul>
-        <li>Advanced analytics</li>
-        <li>Priority support</li>
-        <li>Connect and chat with your friends</li>
-        <li>Advanced integrations</li>
-        <li>Discover the most visited places</li>
-      </ul>
+        <div class="popular-label">MOST POPULAR</div>
 
-      <!-- Email link for customers interested in the Pro plan -->
-      <p>
-        <a href="mailto:Motiveprice@gmail.com?subject=Pro%20Plan">
+        <h2>Pro</h2>
+
+        <p class="plan-description">
+          More power for growing teams.
+        </p>
+
+        <p class="price">
+          <span>$49</span> / month
+        </p>
+
+        <hr>
+
+        <p class="features-title">What's included:</p>
+
+        <ul class="plan-features">
+          <li>Advanced analytics</li>
+          <li>Priority support</li>
+          <li>Connect and chat with your friends</li>
+          <li>Advanced integrations</li>
+          <li>Discover the most visited places</li>
+        </ul>
+
+        <a class="plan-button featured-button" href="mailto:Motiveprice@gmail.com?subject=Pro%20Plan">
           Choose Pro
         </a>
-      </p>
-    </section>
 
-    <hr>
+      </article>
 
-    <!-- Business plan: features for groups and organizations -->
-    <section>
-      <h2>Business</h2>
-      <p><strong>$99</strong> / month</p>
-      <p>More options for groups that want to plan together.</p>
+      <!-- Business plan -->
+      <article class="plan-card">
 
-      <p><strong>What's included:</strong></p>
-      <ul>
-        <li>Unlimited calls with our team</li>
-        <li>Custom reports</li>
-        <li>Dedicated support</li>
-        <li>AI helper</li>
-        <li>Advanced security</li>
-        <li>Reservations at different places</li>
-      </ul>
+        <h2>Business</h2>
 
-      <!-- Email link for customers interested in the Business plan -->
-      <p>
-        <a href="mailto:Motiveprice@gmail.com?subject=Business%20Plan">
+        <p class="plan-description">
+          More options for groups that want to plan together.
+        </p>
+
+        <p class="price">
+          <span>$99</span> / month
+        </p>
+
+        <hr>
+
+        <p class="features-title">What's included:</p>
+
+        <ul class="plan-features">
+          <li>Unlimited calls with our team</li>
+          <li>Custom reports</li>
+          <li>Dedicated support</li>
+          <li>AI helper</li>
+          <li>Advanced security</li>
+          <li>Reservations at different places</li>
+        </ul>
+
+        <a class="plan-button" href="mailto:Motiveprice@gmail.com?subject=Business%20Plan">
           Contact sales
         </a>
-      </p>
+
+      </article>
+
     </section>
 
-    <hr>
+    <!-- Frequently asked questions -->
+    <section class="faq-section">
 
-    <!-- FAQ: answers to common questions about Motive -->
-    <section>
+      <p class="eyebrow">NEED MORE INFORMATION?</p>
+
       <h2>Frequently asked questions</h2>
 
-      <!-- Question 1: product explanation -->
-      <h3>What is Motive?</h3>
-      <p>
-        Motive helps friends find and rank food places based on everyone's
-        preferences.
-      </p>
+      <div class="faq-list">
 
-      <!-- Question 2: how the product works -->
-      <h3>How does Motive work?</h3>
-      <p>
-        Create a blend, invite your friends, set your preferences,
-        and discover a ranked list of places that suit your group.
-      </p>
+        <div class="faq-item">
+          <h3>What is Motive?</h3>
+          <p>
+            Motive helps friends find and rank food places
+            based on everyone's preferences.
+          </p>
+        </div>
 
-      <!-- Question 3: budget preferences -->
-      <h3>Can I choose my budget?</h3>
-      <p>
-        Yes. You can set your budget and other preferences to help
-        find places that work for your group.
-      </p>
+        <div class="faq-item">
+          <h3>How does Motive work?</h3>
+          <p>
+            Create a blend, invite your friends, set your preferences,
+            and discover a ranked list of places that suit your group.
+          </p>
+        </div>
 
-      <!-- Question 4: using Motive with friends -->
-      <h3>Can I use Motive with my friends?</h3>
-      <p>
-        Yes. Invite your friends using a link and combine everyone's
-        preferences to find places together.
-      </p>
+        <div class="faq-item">
+          <h3>Can I choose my budget?</h3>
+          <p>
+            Yes. You can set your budget and other preferences
+            to help find places that work for your group.
+          </p>
+        </div>
 
-      <!-- Question 5: contacting the team -->
-      <h3>How can I get help?</h3>
-      <p>
-        Contact our team at
-        <a href="mailto:Motiveprice@gmail.com">Motiveprice@gmail.com</a>.
-      </p>
+        <div class="faq-item">
+          <h3>Can I use Motive with my friends?</h3>
+          <p>
+            Yes. Invite your friends using a link and combine
+            everyone's preferences to find places together.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How can I get help?</h3>
+          <p>
+            Contact our team at
+            <a href="mailto:Motiveprice@gmail.com">Motiveprice@gmail.com</a>.
+          </p>
+        </div>
+
+      </div>
+
     </section>
 
   </main>
 
-  <hr>
-
-  <!--team and course information -->
-  <footer>
-    <p>Group 16 &middot; SEG2900</p>
+  <!-- Footer -->
+  <footer class="footer">
+    Group 16 · SEG2900
   </footer>
 
 </body>
 </html>
-
