@@ -1,14 +1,32 @@
-# GMotive
-A website advertising an app that lets people decide their next hangouts with their friends. It mimics Spotify's blend feature where people combine their playlists and get one suiting everyone tastes but for hangouts. It curates a list meeting everyone's budgets, areas, mood, and other specific filters. 
+# Motive
 
-Groupe 16:
+Motive is a concept website for a social hangout-planning app. It helps groups combine budgets, preferred areas, moods, and other filters to discover ideas everyone can agree on.
 
-Zayneb Khadimallah: 300535447
+## Website
 
-Beshoy Abdou: 300526750
+This is a static site built with HTML, CSS, and vanilla JavaScript. No build step or package installation is required.
 
-Mobolaoluwabo Oyeyiola:300561715
+### Pages
+- **Home** — product introduction
+- **Features** — concept overview and how it works
+- **Pricing** — sample plan page
+- **Team** — project team information
 
-Bwitonzi Alva 300432891
+## Run locally
 
-Shrikrishna Swami 300553472
+Open `index.html` in your browser, or run a static server from the repository root:
+
+```bash
+python -m http.server 8000
+```
+
+Visit [http://localhost:8000](http://localhost:8000).
+
+## Publish with GitHub Pages
+
+1. Push changes to `main`.
+2. Open repository **Settings → Pages**.
+3. Under **Build and deployment**, select **GitHub Actions** as the source.
+4. The included `.github/workflows/pages.yml` workflow deploys the static site on pushes to `main`.
+
+No build command is needed. The existing HTML pages, stylesheets, scripts, images, and mockups are served directly.
