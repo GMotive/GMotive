@@ -7,6 +7,8 @@
     [".step", ".steps"],
     [".plan-card", ".pricing-container"],
     [".faq", ".faq-list"],
+    [".faq-item", ".faq-list"],
+    [".how-step", ".how-steps"],
     ["#team article", "#team"],
     [".preview-panel", ".preview-inner"],
     [".stage", "main"],
