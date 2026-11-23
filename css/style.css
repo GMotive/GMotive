@@ -60,3 +60,36 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--lime); outline-
   .btn-lime { font-size: 1.4rem; padding: 18px 44px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+
+/* ---------- 6. Motion system (shared across every page) ---------- */
+:root { --motion-ease: cubic-bezier(.2,.75,.25,1); }
+.nav { animation: nav-enter .75s var(--motion-ease) both; }
+.nav-links a { position:relative; transition:color .25s ease,background .25s ease,transform .25s ease; }
+.nav-links a:hover { transform:translateY(-2px); }
+.brand img { transition:transform .45s var(--motion-ease); }
+.brand:hover img { transform:rotate(-8deg) scale(1.08); }
+.btn,.plan-button { transition:transform .3s var(--motion-ease),box-shadow .3s ease,filter .3s ease; }
+.btn:hover,.plan-button:hover { transform:translateY(-4px); filter:brightness(1.06); }
+.motion-ready .reveal { opacity:0; transform:translate3d(0,30px,0); transition:opacity .75s var(--motion-ease),transform .75s var(--motion-ease); transition-delay:var(--reveal-delay,0ms); }
+.motion-ready .reveal.is-visible { opacity:1; transform:translate3d(0,0,0); }
+.motion-ready .reveal.from-left { transform:translate3d(-34px,0,0); }
+.motion-ready .reveal.from-right { transform:translate3d(34px,0,0); }
+.motion-ready .reveal.from-left.is-visible,.motion-ready .reveal.from-right.is-visible { transform:translate3d(0,0,0); }
+.hero h1,.pricing-hero h1,#team > h1 { animation:title-arrive .9s .12s var(--motion-ease) both; }
+.hero > p,.hero-description,#team > p { animation:copy-arrive .8s .28s var(--motion-ease) both; }
+.hero-actions,.hero-note,.hero .btn,.pricing-hero .eyebrow { animation:copy-arrive .8s .4s var(--motion-ease) both; }
+.feature-card,.step,.plan-card,.faq,#team article { transition:transform .35s var(--motion-ease),border-color .35s ease,box-shadow .35s ease; }
+.feature-card:hover,.step:hover,.plan-card:hover,#team article:hover { transform:translateY(-7px); border-color:rgba(155,48,255,.7); box-shadow:0 18px 50px rgba(89,35,130,.18); }
+.iconbox { display:inline-block; transition:transform .4s var(--motion-ease); }
+.feature-card:hover .iconbox { transform:translateY(-4px) rotate(-8deg) scale(1.12); }
+.preview-panel { transition:transform .45s var(--motion-ease),border-color .3s ease; }
+.preview-panel:hover { transform:translateY(-5px); border-color:rgba(155,48,255,.55); }
+@keyframes nav-enter { from{opacity:0;transform:translateY(-14px)} to{opacity:1;transform:translateY(0)} }
+@keyframes title-arrive { from{opacity:0;transform:translateY(24px) scale(.985);filter:blur(7px)} to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)} }
+@keyframes copy-arrive { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@media (prefers-reduced-motion:reduce) {
+ .nav,.hero h1,.pricing-hero h1,#team > h1,.hero > p,.hero-description,#team > p,.hero-actions,.hero-note,.hero .btn,.pricing-hero .eyebrow { animation:none!important; }
+ .motion-ready .reveal,.motion-ready .reveal.is-visible,.motion-ready .reveal.from-left,.motion-ready .reveal.from-right { opacity:1!important;transform:none!important;transition:none!important; }
+ *,*::before,*::after { scroll-behavior:auto!important; }
+}
